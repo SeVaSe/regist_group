@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace group_520
 {
@@ -24,16 +25,26 @@ namespace group_520
         {
             InitializeComponent();
             Closing += Window_Closing;
+
+            DispatcherTimer time = new DispatcherTimer();
+            time.Interval = TimeSpan.FromSeconds(1);
+            time.Tick += Time_Tick;            
+            time.Start();
         }
 
+        private void Time_Tick(object sender, EventArgs e)
+        {
+            TextBlTime.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        // закрытие окна
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            // Обработка закрытия окна
-            MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите закрыть окно?", "Подтверждение закрытия", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult res = MessageBox.Show("Вы точно хотите закрыть окно?", "Подтверждение выхода", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-            if (result == MessageBoxResult.No)
+            if (res == MessageBoxResult.No)
             {
-                e.Cancel = true; // Отмена закрытия окна
+                e.Cancel = true;
             }
         }
     }
