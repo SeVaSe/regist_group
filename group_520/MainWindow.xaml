@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:group_520"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="450" Width="800">
+        ResizeMode="NoResize"
+        Title="Регистрация" Height="450" Width="800">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -14,8 +15,23 @@
                 <RowDefinition Height="313*"/>
                 <RowDefinition Height="45*"/>
             </Grid.RowDefinitions>
-            <Frame Name="MainFrame" Content="Frame" Grid.Row="1"/>
-            <TextBlock HorizontalAlignment="Left" Margin="703,0,0,0" Grid.Row="2" TextWrapping="Wrap" Name="TextBlTime" VerticalAlignment="Center" Height="39" Width="87"/>
+            <Frame Name="MainFrame" Source="Pages/AuthPage.xaml" Grid.Row="1"/>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="144*"/>
+                    <ColumnDefinition Width="15*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" x:Name="TextBlTime" VerticalAlignment="Center" Height="29" Width="62" Grid.Column="1"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="17*"/>
+                    <ColumnDefinition Width="142*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Button" Style="{StaticResource ModernButton}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="28" Width="70" Grid.Column="1"/>
+            </Grid>
         </Grid>
 
     </Grid>
