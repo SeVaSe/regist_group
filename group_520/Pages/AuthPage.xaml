@@ -22,12 +22,16 @@
                 <ColumnDefinition Width="50*"/>
                 <ColumnDefinition Width="98*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="2" Content="Вход" HorizontalAlignment="Left" Margin="10,119,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+            <Button Grid.Column="2" Content="Вход" HorizontalAlignment="Left" Margin="10,119,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
             <Button Grid.Column="2" Content="Регистрация" HorizontalAlignment="Left" Margin="10,152,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
             <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="47,22,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Width="37" Grid.Row="1"/>
             <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="47,48,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Width="42" Grid.Row="1"/>
-            <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="6,21,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Логин или почта" VerticalAlignment="Top" Width="165"/>
-            <TextBox Grid.Column="2" Name="PassworBox" HorizontalAlignment="Left" Margin="6,47,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Width="165" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+
+            <TextBlock Name="TxtBl_Log" Grid.Column="2" HorizontalAlignment="Left" Margin="10,22,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Логин или почта" VerticalAlignment="Top" Width="109" Visibility="Visible"/>
+            <TextBlock x:Name="TxtBl_Pasw" Grid.Column="2" HorizontalAlignment="Left" Margin="10,47,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Width="109" Visibility="Visible"/>
+            <TextBox Background="Transparent" x:Name="TxtBox_Log" Grid.Column="2" HorizontalAlignment="Left" Margin="6,21,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" TextChanged="TextBl_Changed"/>
+            <PasswordBox Background="Transparent" x:Name="PaswBox" Grid.Column="2" HorizontalAlignment="Left" Margin="6,46,0,0" Grid.Row="1" VerticalAlignment="Top" Width="165" PasswordChanged="PasswordBox_PasswordChanged"/>
+            
 
         </Grid>
 

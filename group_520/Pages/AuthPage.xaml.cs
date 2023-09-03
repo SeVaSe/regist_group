@@ -25,25 +25,36 @@ namespace group_520.Pages
             InitializeComponent();
         }
 
-        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        private void TextBl_Changed(object sender, RoutedEventArgs e)
         {
-            string textInTxtBox = PassworBox.Text.ToLower();
-            // Очистите текст, когда TextBox получает фокус
-            TextBox textBox = (TextBox)sender;
-            if (textBox.Text.ToLower() == textInTxtBox)
+            if (TxtBox_Log.Text.Length > 0)
             {
-                textBox.Text = "";
+                TxtBl_Log.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                TxtBl_Log.Visibility = Visibility.Visible;
             }
         }
 
-        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            string textInTxtBox = PassworBox.Text.ToLower();
-            // Восстановите текст, если TextBox пустой
-            TextBox textBox = (TextBox)sender;
-            if (string.IsNullOrWhiteSpace(textBox.Text))
+            if (PaswBox.SecurePassword.Length > 0)
             {
-                textBox.Text = textInTxtBox;
+                TxtBl_Pasw.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                TxtBl_Pasw.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(TxtBox_Log.Text) || string.IsNullOrEmpty(PaswBox.Password))
+            {
+                MessageBox.Show("Введите логин и пароль", "Ошибка ввода");
+                return;
             }
         }
     }
