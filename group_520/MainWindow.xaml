@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:group_520"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
-        Title="Регистрация" Height="450" Width="800">
+        Width="650" Height="450">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -15,22 +14,25 @@
                 <RowDefinition Height="313*"/>
                 <RowDefinition Height="45*"/>
             </Grid.RowDefinitions>
-            <Frame Name="MainFrame" Source="Pages/AuthPage.xaml" Grid.Row="1"/>
+
+            <Frame Name="MainFrame" Source="Pages/AuthPage.xaml" Margin="0,48,0,48" Grid.RowSpan="3"/>
+
+
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="144*"/>
-                    <ColumnDefinition Width="15*"/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="265*"/>
+                    <ColumnDefinition Width="58*"/>
+                    <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" x:Name="TextBlTime" VerticalAlignment="Center" Height="29" Width="62" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TxtBlTime}" x:Name="TextBlTime" VerticalAlignment="Center" Height="29" Width="96" Grid.Column="1"/>
             </Grid>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="17*"/>
-                    <ColumnDefinition Width="142*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="87*"/>
+                    <ColumnDefinition Width="559*"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Button" Style="{StaticResource ModernButton}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="28" Width="70" Grid.Column="1"/>
+                <Button Content="Назад" ToolTip="Вернуться назад" Style="{StaticResource ButtonClearTheme}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="28" Width="70" Grid.Column="1"/>
             </Grid>
         </Grid>
 

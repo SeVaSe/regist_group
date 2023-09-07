@@ -1,8 +1,61 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Style TargetType="Button" x:Key="ModernButton">
-        <Setter Property="Background" Value="Gray"/>
+    
+    <!--Стиль для кнопок, просто убирает тригер на посинение кнопки, устанавливает цвета, закругленность,
+    изменение цвета при наведении и др-->
+    <Style TargetType="Button" x:Key="ButtonClearTheme">
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#e0a8af"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="17"/>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#3aa0ff"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <!--Label-->
+    <Style TargetType="Label" x:Key="LabelModern">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="FontWeight" Value="Bold"/>
     </Style>
     
+    <!--TextBlock скрытый под формами (есть другой способ)-->
+    <Style TargetType="TextBlock" x:Key="TxtBlHideZone">
+        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="Opacity" Value="0.7"/>
+    </Style>
+    
+    <!--TextBox стиль для окон ввода данных-->
+    <Style TargetType="TextBox" x:Key="TxtBxInputData">
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+
+    <!--Время-->
+    <Style TargetType="TextBlock" x:Key="TxtBlTime">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+
 </ResourceDictionary>
