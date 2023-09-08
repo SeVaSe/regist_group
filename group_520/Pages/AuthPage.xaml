@@ -6,7 +6,6 @@
       xmlns:local="clr-namespace:group_520.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="Авторизация"
       Background="#b5d5ca">
 
 

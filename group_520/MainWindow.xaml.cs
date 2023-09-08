@@ -30,6 +30,7 @@ namespace group_520
             time.Interval = TimeSpan.FromSeconds(1);
             time.Tick += Time_Tick;            
             time.Start();
+
         }
 
         private void Time_Tick(object sender, EventArgs e)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,14 +79,22 @@ namespace group_520.Pages
                     }
                     else
                     {
-                        MessageBox.Show("СЮДА");
+                        switch (user.role)
+                        {
+                            case "admin":
+                                NavigationService?.Navigate(new AdminPage());
+                                break;
+                            case "user":
+                                NavigationService?.Navigate(new UserPage());
+                                break;
+                        }   
                         TxtBox_Log.Clear();
                         PaswBox.Clear();
                     }
                 }
                 else if (PaswBox.Password.Length < 6)
                 {
-                    MessageBox.Show("ОШИБКАААА МАЛЕНЬКИИИИЙ ПАРОЛЛЛЛЛЛЬ");
+                    MessageBox.Show("Вы указали маленький пароль", "Маленький пароль", MessageBoxButton.OK, MessageBoxImage.Warning);
                     PaswBox.Clear();
                 }
                 

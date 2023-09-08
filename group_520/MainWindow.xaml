@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:group_520"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Width="650" Height="450">
+        Width="650" Height="450"
+        Title="Авторизация">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
