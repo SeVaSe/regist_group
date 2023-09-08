@@ -66,16 +66,30 @@ namespace group_520.Pages
                 if (user == null)
                 {
                     MessageBox.Show("Такого пользователя не существует!", "Не существующий пользователь", MessageBoxButton.OK, MessageBoxImage.Error);
-
+                    TxtBox_Log.Clear();
+                    PaswBox.Clear();
                 }
-                else if (user.password != PaswBox.Password)
+                else if (PaswBox.Password.Length >= 6)
                 {
-                    MessageBox.Show("Пароль указан не верно", "Ошибка пароля", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    if (user.password != PaswBox.Password)
+                    {
+                        MessageBox.Show($"Пароль указан не верно {user.password}", "Ошибка пароля", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        PaswBox.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("СЮДА");
+                        TxtBox_Log.Clear();
+                        PaswBox.Clear();
+                    }
                 }
-                else
+                else if (PaswBox.Password.Length < 6)
                 {
-                    MessageBox.Show("СЮДА");
+                    MessageBox.Show("ОШИБКАААА МАЛЕНЬКИИИИЙ ПАРОЛЛЛЛЛЛЬ");
+                    PaswBox.Clear();
                 }
+                
+                
                 
 
             }
