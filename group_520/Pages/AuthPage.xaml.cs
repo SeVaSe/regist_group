@@ -49,12 +49,35 @@ namespace group_520.Pages
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Btn_entrance(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(TxtBox_Log.Text) || string.IsNullOrEmpty(PaswBox.Password))
             {
-                MessageBox.Show("Введите логин и пароль", "Ошибка ввода");
+                MessageBox.Show("Введите логин и пароль", "Ошибка ввода", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
+            }
+
+            using (var db = new Entities())
+            {
+                var user = db.User
+                    .AsNoTracking()
+                    .FirstOrDefault(u => u.login == TxtBox_Log.Text);
+
+                if (user == null)
+                {
+                    MessageBox.Show("Такого пользователя не существует!", "Не существующий пользователь", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                }
+                else if (user.password != PaswBox.Password)
+                {
+                    MessageBox.Show("Пароль указан не верно", "Ошибка пароля", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("СЮДА");
+                }
+                
+
             }
         }
     }

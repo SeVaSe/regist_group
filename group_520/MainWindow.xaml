@@ -32,7 +32,7 @@
                     <ColumnDefinition Width="87*"/>
                     <ColumnDefinition Width="559*"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Назад" ToolTip="Вернуться назад" Style="{StaticResource ButtonClearTheme}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="28" Width="70" Grid.Column="1"/>
+                <Button Content="Выход" ToolTip="Вернуться назад" Style="{StaticResource ButtonClearTheme}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="28" Width="70" Grid.Column="1"/>
             </Grid>
         </Grid>
 
