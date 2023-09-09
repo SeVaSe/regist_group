@@ -22,7 +22,7 @@
                 <ColumnDefinition Width="98*"/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="2" Content="Вход" ToolTip="Вход"  Style="{StaticResource ButtonClearTheme}" HorizontalAlignment="Left" Margin="10,91,0,0" Grid.Row="1" VerticalAlignment="Top" Width="105" Height="30" Click="Btn_entrance"/>
-            <Button Grid.Column="2" Content="Регистрация" ToolTip="Зарегистрироваться" Style="{StaticResource ButtonClearTheme}" HorizontalAlignment="Left" Margin="10,135,0,0" Grid.Row="1" VerticalAlignment="Top" Width="105" Height="30"/>
+            <Button Grid.Column="2" Content="Регистрация" ToolTip="Зарегистрироваться" Style="{StaticResource ButtonClearTheme}" HorizontalAlignment="Left" Margin="10,135,0,0" Grid.Row="1" VerticalAlignment="Top" Width="105" Height="30" Click="Button_Click"/>
 
 
             <TextBlock Name="TxtBl_Log" Grid.Column="2" HorizontalAlignment="Left" Margin="10,22,0,0" Grid.Row="1" TextWrapping="Wrap" Style="{StaticResource TxtBlHideZone}" Text="Логин или почта" VerticalAlignment="Top" Width="109" Visibility="Visible"/>
