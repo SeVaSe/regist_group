@@ -31,6 +31,8 @@ namespace group_520
             time.Tick += Time_Tick;            
             time.Start();
 
+
+            MainFrame.NavigationService.RemoveBackEntry();
         }
 
         private void Time_Tick(object sender, EventArgs e)
@@ -48,5 +50,7 @@ namespace group_520
                 e.Cancel = true;
             }
         }
+
+      
     }
 }

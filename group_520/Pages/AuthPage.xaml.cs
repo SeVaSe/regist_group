@@ -82,9 +82,18 @@ namespace group_520.Pages
                         switch (user.role)
                         {
                             case "admin":
+                                // Получаем доступ к главному окну и изменяем его заголовок
+                                if (Application.Current.MainWindow is MainWindow mainWindow)
+                                {
+                                    mainWindow.Title = "Администрация";
+                                }
                                 NavigationService?.Navigate(new AdminPage());
                                 break;
                             case "user":
+                                if (Application.Current.MainWindow is MainWindow mainWindow1)
+                                {
+                                    mainWindow1.Title = "Пользователь";
+                                }
                                 NavigationService?.Navigate(new UserPage());
                                 break;
                         }   
@@ -97,6 +106,7 @@ namespace group_520.Pages
                     MessageBox.Show("Вы указали маленький пароль", "Маленький пароль", MessageBoxButton.OK, MessageBoxImage.Warning);
                     PaswBox.Clear();
                 }
+                
                 
                 
                 
