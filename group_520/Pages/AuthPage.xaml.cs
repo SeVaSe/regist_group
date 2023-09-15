@@ -58,7 +58,7 @@ namespace group_520.Pages
                 return;
             }
 
-            using (var db = new Entities())
+            using (var db = new Entities1())
             {
                 var user = db.User
                     .AsNoTracking()
