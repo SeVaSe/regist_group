@@ -10,21 +10,30 @@
   Background="#b5d5ca">
 
     <Grid>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="40*"/>
-                <RowDefinition Height="206*"/>
-                <RowDefinition Height="40*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="11*"/>
-                <ColumnDefinition Width="107*"/>
-            </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="377*"/>
+            <RowDefinition Height="73*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Background="#b5d5ca" Grid.Row="0" Name="DataGridUser" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Логин" Binding="{Binding login}" Width="50"/>
+                <DataGridTextColumn Header="Пароль" Binding="{Binding password}" Width="70"/>
+                <DataGridTextColumn Header="Роль" Binding="{Binding role}" Width="80"/>
+                <DataGridTextColumn Header="Ф.И.О." Binding="{Binding fio}" Width="100"/>
+                <DataGridTextColumn Header="Фото" Binding="{Binding photo}" Width="100"/>
 
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="ButtonEdit" Style="{StaticResource ButtonClearTheme}" Content="Редактировать"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
 
-            <Label Content="ADMIN" Grid.Row="1" Grid.Column="2" FontSize="40"/>
-
-        </Grid>
-
+        <Button Grid.Row="1" Style="{StaticResource ButtonClearTheme}" Name="ButtonAdd" Content="Добавить" HorizontalAlignment="Left" />
+        <Button Grid.Row="1" Style="{StaticResource ButtonClearTheme}" Name="ButtonDel" Content="Удалить" HorizontalAlignment="Right" />
     </Grid>
+
 </Page>

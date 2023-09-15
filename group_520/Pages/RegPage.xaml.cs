@@ -65,6 +65,7 @@ namespace group_520.Pages
                     if (user.login == LoginTxtBox.Text)
                     {
                         MessageBox.Show("Такой логин уже существует. Придумайте новый", "Существующий логин", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        LoginTxtBox.Clear();
                     }
                     else
                     {

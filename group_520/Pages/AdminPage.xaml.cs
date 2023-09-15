@@ -23,6 +23,7 @@ namespace group_520.Pages
         public AdminPage()
         {
             InitializeComponent();
+            DataGridUser.ItemsSource = Entities1.GetEntities1().User.ToList();
         }
     }
 }

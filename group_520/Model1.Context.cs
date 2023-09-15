@@ -15,11 +15,23 @@ namespace group_520
     
     public partial class Entities1 : DbContext
     {
+        private static Entities1 _comntext;
+
         public Entities1()
             : base("name=Entities1")
         {
         }
-    
+
+        public static Entities1 GetEntities1()
+        {
+            if (_comntext == null)
+            {
+                _comntext = new Entities1();
+            }
+            return _comntext;
+        }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
