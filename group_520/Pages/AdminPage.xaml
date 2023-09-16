@@ -25,15 +25,15 @@
                 <DataGridTemplateColumn Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Name="ButtonEdit" Style="{StaticResource ButtonClearTheme}" Content="Редактировать"></Button>
+                            <Button Name="ButtonEdit" Style="{StaticResource ButtonClearTheme}" Content="Редактировать" Click="But_Redactor"></Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Grid.Row="1" Style="{StaticResource ButtonClearTheme}" Name="ButtonAdd" Content="Добавить" HorizontalAlignment="Left" />
-        <Button Grid.Row="1" Style="{StaticResource ButtonClearTheme}" Name="ButtonDel" Content="Удалить" HorizontalAlignment="Right" />
+        <Button Grid.Row="1" Style="{StaticResource ButtonClearTheme}" Name="ButtonAdd" Content="Добавить" HorizontalAlignment="Left" Click="ButtonAdd_Click" Margin="5,5,0,5" />
+        <Button Grid.Row="1" Style="{StaticResource ButtonClearTheme}" Name="ButtonDel" Content="Удалить" HorizontalAlignment="Right" Click="ButtonDel_Click" />
     </Grid>
 
 </Page>

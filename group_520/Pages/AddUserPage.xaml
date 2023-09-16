@@ -1,0 +1,43 @@
+﻿<Page x:Class="group_520.Pages.AddUserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:group_520.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Background="#b5d5ca"
+      Title="AddUserPage">
+
+    <Grid x:Name="GridLogAdmin">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Логин" Grid.Row="0" Grid.Column="0" Margin="92,0,0,0" HorizontalAlignment="Left" Width="41"/>
+        <TextBlock Text="Пароль" Grid.Row="1" Grid.Column="0" Margin="92,0,0,0" HorizontalAlignment="Left" Width="41"/>
+        <TextBlock Text="Роль" Grid.Row="2" Grid.Column="0" Margin="92,0,0,0" HorizontalAlignment="Left" Width="41"/>
+        <TextBlock Text="ФИО" Grid.Row="3" Grid.Column="0" Margin="92,0,0,0" HorizontalAlignment="Left" Width="41"/>
+        <TextBlock Text="Фото (необязательно)" Grid.Row="4" Grid.Column="0" Margin="35,0,0,0" HorizontalAlignment="Left" Width="125"/>
+        <TextBox ToolTip="Введите логин" Name="TxtBoxLog" Text="{Binding login}" Grid.Row="0" Grid.Column="1" Margin="0,-1,0,25"/>
+        <TextBox ToolTip="Введите пароль" Name="TxtBoxPasw" Text="{Binding password}" Grid.Column="1" Margin="0,49,0,25" Grid.RowSpan="2"/>
+        <ComboBox ToolTip="Выберите роль" Name="comboBoxEl" SelectedItem="{Binding role}" Grid.Row="1" Grid.Column="1" Margin="0,49,0,25" Grid.RowSpan="2">
+            <ComboBoxItem Content="admin"/>
+            <ComboBoxItem Content="user"/>
+        </ComboBox>
+        <TextBox ToolTip="Введите ФИО" Text="{Binding fio}" Name="TxtBoxFio" Grid.Row="2" Grid.Column="1" Margin="0,49,0,25" Grid.RowSpan="2"/>
+        <TextBox ToolTip="Введите фото" Text="{Binding photo}" Name="TxtNameBox" Grid.Row="3" Grid.Column="1" Margin="0,49,0,25" Grid.RowSpan="2"/>
+        <Button Style="{StaticResource ButtonClearTheme}" Name="ButtonSave" Content="Сохранить" Grid.Row="5" Click="ButtonSave_Click" Margin="0,5,0,5" HorizontalAlignment="Center" Grid.Column="1" Width="92"/>
+        <Button Style="{StaticResource ButtonClearTheme}" Name="ButtonCancel" Content="Отмена" Grid.Row="5" Click="ButtonCancel_Click" Margin="52,5,0,5" HorizontalAlignment="Left" Width="73"/>
+    </Grid>
+
+
+</Page>
