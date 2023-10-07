@@ -23,6 +23,8 @@ namespace group_520.Pages
         public UserPage()
         {
             InitializeComponent();
+            var currentUser = Entities1.GetEntities1().User.ToList();
+            ListUser.ItemsSource = currentUser;
         }
     }
 }
