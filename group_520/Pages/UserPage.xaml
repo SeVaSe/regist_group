@@ -10,11 +10,12 @@
       Background="#b5d5ca">
 
     <Grid>
+        
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="380*"/>
         </Grid.RowDefinitions>
-        <ListView Name="ListUser" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center">
+        <ListView Name="ListUser" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" Grid.ColumnSpan="4">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"></WrapPanel>
@@ -34,7 +35,7 @@
                             <Image.Source>
                                 <Binding Path="photo">
                                     <Binding.TargetNullValue>
-                                        <ImageSource>/Source/photo/DefaultPhoto.png</ImageSource>   
+                                        <ImageSource>/Source/photo/DefaultPhoto.png</ImageSource>
                                     </Binding.TargetNullValue>
                                 </Binding>
                             </Image.Source>
@@ -48,11 +49,22 @@ Text="{Binding role}"/>
 
                     </Grid>
                 </DataTemplate>
-                
+
             </ListView.ItemTemplate>
-            
+
         </ListView>
-        
+        <WrapPanel Grid.ColumnSpan="4">
+            <TextBlock TextWrapping="Wrap" Text="Введите ФИО для поиска:" Height="20" Width="145"/>
+            <TextBox TextWrapping="Wrap" Name="TxtBox_FindFIO" Width="120" TextChanged="TxtBox_FindFIO_TextChanged"/>
+            <TextBlock TextWrapping="Wrap" Text="Сортировка ФИО:" Width="103"/>
+            <ComboBox Width="120" Name="CmbBox_SortirovkaFIO" SelectionChanged="CmbBox_SortirovkaFIO_SelectionChanged">
+                <TextBlock>admin</TextBlock>
+                <TextBlock>user</TextBlock>
+            </ComboBox>
+            <CheckBox Content="только Админы" Name="CheckDriver" Checked="CheckDriver_Checked" Unchecked="UnCheckDriver_UnChecked"/>
+            <Button Content="Очистить фильтр" Width="105" Click="Button_Click"/>
+        </WrapPanel>
+
     </Grid>
 
 </Page>
